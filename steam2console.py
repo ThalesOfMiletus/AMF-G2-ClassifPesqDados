@@ -75,20 +75,20 @@ class ArvoreJogos:
 
         # Casos de desequilíbrio
         # Esquerda-Esquerda
-        if balanceamento > 1 and novo_no.jogo.preco < no_atual.esquerda.jogo.preco:
+        if balanceamento > 4 and novo_no.jogo.preco < no_atual.esquerda.jogo.preco:
             return self.rotacao_direita(no_atual)
 
         # Direita-Direita
-        if balanceamento < -1 and novo_no.jogo.preco > no_atual.direita.jogo.preco:
+        if balanceamento < -4 and novo_no.jogo.preco > no_atual.direita.jogo.preco:
             return self.rotacao_esquerda(no_atual)
 
         # Esquerda-Direita
-        if balanceamento > 1 and novo_no.jogo.preco > no_atual.esquerda.jogo.preco:
+        if balanceamento > 4 and novo_no.jogo.preco > no_atual.esquerda.jogo.preco:
             no_atual.esquerda = self.rotacao_esquerda(no_atual.esquerda)
             return self.rotacao_direita(no_atual)
 
         # Direita-Esquerda
-        if balanceamento < -1 and novo_no.jogo.preco < no_atual.direita.jogo.preco:
+        if balanceamento < -4 and novo_no.jogo.preco < no_atual.direita.jogo.preco:
             no_atual.direita = self.rotacao_direita(no_atual.direita)
             return self.rotacao_esquerda(no_atual)
 
